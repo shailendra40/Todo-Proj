@@ -1,0 +1,130 @@
+/* Resetting default browser styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* Mixed color background using RGB values */
+    background: linear-gradient(to bottom, rgb(34, 139, 34), rgb(135, 206, 250), rgb(255, 222, 173), rgb(255, 99, 71), rgb(107, 142, 35));
+    /* Background with a linear gradient from forest green to sky blue to sandy brown to tomato to olive drab */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Container for the todo app */
+.container {
+    max-width: 600px; /* Limiting the width of the container */
+    margin: 0 auto; /* Centering the container horizontally */
+    padding: 20px;
+    /* Background color with a mixture of colors in a radial gradient */
+    background: radial-gradient(circle, #ff6347, #ffa07a, #20b2aa, #32cd32);
+    border-radius: 50%; /* Ensure the container is a circle */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Adding a subtle shadow */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.container:hover {
+    /* Change the background color on hover */
+    background: radial-gradient(circle, #ff69b4, #ffff00, #00bfff, #8a2be2);
+}
+
+
+/* Todo list heading */
+h1 {
+    text-align: center;
+    color: hsl(197, 38%, 24%); /* Radish light color */
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Use a sans-serif font stack */
+    font-size: 36px; /* Set the font size */
+    font-weight: bold; /* Set the font weight to bold */
+    font-style: italic; /* Set the font style to italic */
+    text-transform: uppercase; /* Transform the text to uppercase */
+}
+
+
+/* Form for adding new tasks */
+#todoForm {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Input field for adding tasks */
+input[type="text"] {
+    width: 60%; /* Setting width of the input field */
+    padding: 10px; /* Adding padding */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Button for submitting tasks */
+button[type="submit"] {
+    padding: 10px 20px; /* Adding padding */
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text color */
+    border: none; /* Removing border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Set cursor to pointer */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Adding smooth transition for background color and box shadow */
+}
+
+/* Button hover effect */
+button[type="submit"]:hover {
+    background-color: #45a049; /* Darker green on hover */
+    box-shadow: 0 4px 8px rgba(255, 255, 0, 0.5); /* Yellow shadow on hover */
+}
+
+
+/* Button hover effect */
+button[type="submit"]:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Todo list */
+#todoList {
+    list-style-type: none; /* Removing default list styles */
+    padding: 0;
+}
+
+/* Individual todo items */
+li {
+    background-color: hwb(0 62% 31%); /* White background color */
+    padding: 15px; /* Adding padding */
+    margin-bottom: 10px; /* Adding space between items */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Adding smooth transition */
+    display: flex; /* Use flexbox for better alignment */
+    align-items: center; /* Center vertically */
+}
+
+/* Hover effect on todo items */
+li:hover {
+    background-color: hsl(0, 15%, 56%); /* Lighter background color on hover */
+    color: yellow; /* Yellow text color on hover */
+    transform: translateY(-2px); /* Move the item slightly up on hover */
+}
+
+/* Checkbox style */
+input[type="checkbox"] {
+    margin-right: 10px; /* Add spacing between checkbox and text */
+}
+
+/* Completed todo items */
+li.completed {
+    background-color: hsl(0, 66%, 25%); /* Light gray background color for completed items */
+    color: hsl(0, 6%, 49%); /* Light gray text color */
+    text-decoration: line-through; /* Add line-through text decoration for completed items */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Adding smooth transition */
+}
+
+/* Hover effect on completed todo items */
+li.completed:hover {
+    background-color: hsl(0, 66%, 40%); /* Lighter gray background color on hover */
+    color: hsl(182, 77%, 57%); /* Brighter text color on hover */
+}
+
+
+/* Hover effect on checkbox */
+input[type="checkbox"]:hover {
+    cursor: pointer; /* Change cursor to pointer on hover */
+}

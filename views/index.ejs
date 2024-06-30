@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Todo List</h1>
+        <form id="todoForm" action="/todos" method="POST">
+            <input type="text" name="task" placeholder="Enter a new task" required>
+            <button type="submit">Add</button>
+        </form>
+        <ul id="todoList">
+            <% todos.forEach(todo => { %>
+                <li class="<%= todo.completed ? 'completed' : '' %>">
+                    <%= todo.task %>
+                    <% if (!todo.completed) { %>
+                        <button onclick="markAsCompleted('<%= todo.id %>')">Completed</button>
+                    <% } else { %>
+                        <button onclick="markAsIncomplete('<%= todo.id %>')">Undo</button>
+                    <% } %>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/scripts/script.js" defer></script>
+    <script>
+        function markAsCompleted(todoId) {
+            axios.put(`/todos/${todoId}`, { completed: true })
+                .then(response => {
+                    // Reload the page or update the UI as needed
+                    location.reload();
+                })
+                .catch(error => {
+                    console.error('Error marking todo as completed:', error);
+                });
+        }
+
+        function markAsIncomplete(todoId) {
+            axios.put(`/todos/${todoId}`, { completed: false })
+                .then(response => {
+                    // Reload the page or update the UI as needed
+                    location.reload();
+                })
+                .catch(error => {
+                    console.error('Error marking todo as incomplete:', error);
+                });
+        }
+    </script>
+</body>
+</html>
